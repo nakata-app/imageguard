@@ -23,7 +23,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["pytest>=8.0", "ruff>=0.5"]
+dev = ["pytest>=8.0", "pytest-cov>=4.1", "ruff>=0.5", "mypy>=1.8"]
 clip = ["sentence-transformers>=3.0"]
 
 [build-system]

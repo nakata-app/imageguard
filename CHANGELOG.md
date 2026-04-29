@@ -21,8 +21,9 @@ suggestion (`PASS` / `WARN` / `REGENERATE`).
 - CLIP-based global similarity via `sentence-transformers/clip-ViT-B-32`
   (gated behind the `[clip]` extra). Falls back to color-histogram-only
   scoring when the backbone is not installed.
-- HSV color-histogram comparator with KL-divergence over the dominant
-  five colors per image. Deterministic, no model required.
+- HSV color-histogram comparator: per-channel histogram (16 bins each
+  for hue / saturation / value), compared via the Bhattacharyya
+  coefficient. Deterministic, no model required.
 - Threshold-based action mapping. Defaults are conservative
   placeholders pending the calibration pass described in
   `docs/calibration.md`.
