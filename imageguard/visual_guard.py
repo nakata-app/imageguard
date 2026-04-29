@@ -160,7 +160,7 @@ def _color_histogram(image: Image.Image, bins: int = 16) -> np.ndarray[Any, Any]
     hist_h, _ = np.histogram(arr[:, 0], bins=bins, range=(0, 256))
     hist_s, _ = np.histogram(arr[:, 1], bins=bins, range=(0, 256))
     hist_v, _ = np.histogram(arr[:, 2], bins=bins, range=(0, 256))
-    full = np.concatenate([hist_h, hist_s, hist_v]).astype(np.float32)
+    full: np.ndarray[Any, Any] = np.concatenate([hist_h, hist_s, hist_v]).astype(np.float32)
     s = full.sum()
     if s == 0:
         return full
